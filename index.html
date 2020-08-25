@@ -28,15 +28,12 @@
       }
       return (false);
     }
-    document.getElementById('source').src = getQueryVariable('url')
     let type = getQueryVariable('type')
     if (type) {
       document.getElementById('source').type = type
     }
-    setTimeout(() => {
-      videojs("my_video_1").play()
-    }, 1000)
-
+    document.getElementById('source').src = getQueryVariable('url')
+    videojs("my_video_1").play()
   </script>
 </body>
 
