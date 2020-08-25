@@ -14,8 +14,7 @@
 </head>
 
 <body>
-  <video id="my_video_1" class="video-js vjs-default-skin fillWidth" controls data-setup='{}'
-    style="width:100%;height:100%">
+  <video autoplay id="my_video_1" class="video-js vjs-default-skin" controls data-setup='{}'>
     <source id="source" src="" type="application/x-mpegURL">
   </video>
 
@@ -30,6 +29,14 @@
       return (false);
     }
     document.getElementById('source').src = getQueryVariable('url')
+    let type = getQueryVariable('type')
+    if (type) {
+      document.getElementById('source').type = type
+    }
+    setTimeout(() => {
+      videojs("my_video_1").play()
+    }, 1000)
+
   </script>
 </body>
 
